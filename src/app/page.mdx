@@ -1,3 +1,5 @@
+import { About } from '@/components/About'
+import { Features } from '@/components/Features'
 import { Guides } from '@/components/Guides'
 import { Resources } from '@/components/Resources'
 import { HeroPattern } from '@/components/HeroPattern'
@@ -10,6 +12,8 @@ export const metadata = {
 }
 
 export const sections = [
+  { title: 'About Next.js Enterprise', id: 'about' },
+  { title: 'Features', id: 'features' },
   { title: 'Guides', id: 'guides' },
   { title: 'Resources', id: 'resources' },
 ]
@@ -21,41 +25,17 @@ export const sections = [
 Leverage this comprehensive, production-ready enterprise-scale website template to streamline your development process, equipped with Next.js, Tailwind CSS, TypeScript, and a suite of advanced tools and practices, designed to save months of coding and significantly boost your project's profitability.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
-  <Button href="/quickstart" arrow="right">
-    <>Quickstart</>
+  <Button href="/installation" arrow="right">
+    <>Installation</>
   </Button>
   <Button href="/sdks" variant="outline">
     <>Explore SDKs</>
   </Button>
 </div>
 
-## About Next.js Enterprise {{ anchor: false }}
+<About />
 
-Next.js Enterprise is a comprehensive, ready-to-launch web solution designed for both individual developers and businesses aiming to swiftly deploy and scale their online services. Far surpassing a mere boilerplate, this platform encompasses all the advanced capabilities expected at an enterprise level, integrated into a cohesive package that's ready for immediate use.
-
-At the heart of Next.js Enterprise lies the robust and popular React framework, allowing for the construction of dynamic user interfaces with ease. This foundation is significantly enhanced with a variety of built-in features, including a fully configured payment system via Stripe integration, enabling seamless financial transactions for e-commerce, subscriptions, and more.
-
-The platform also boasts an admin dashboard, offering a wide array of analytics tools to monitor website performance, user engagement, and financial metrics, ensuring you have all the necessary insights to make informed decisions. Additionally, Next.js Enterprise includes a sophisticated chatbot functionality, further enriching the user experience and providing automated customer support.
-
-Next.js Enterprise isn't just about the technology; it's about providing a launchpad for any SaaS product, e-commerce site, or online service. With its enterprise-level capabilities, it offers a shortcut to market for businesses and individuals alike, eliminating months of development work. Whether you're looking to sell your SaaS solution or any other online service, Next.js Enterprise provides a flexible, modifiable, and scalable solution that can adapt to your specific needs, making it an invaluable tool for anyone looking to make an impact online.
-
-<div className="not-prose">
-  <Button href="/sdks" variant="text" arrow="right">
-    <>Get your API key</>
-  </Button>
-</div>
-
-## Main features
-
-Here's a detailed look at the key features included:
-
-### User Interface and Experience (UI/UX) features
-
-<Table type="ui" />
-
-### Technical features
-
-<Table type="technical" />
+<Features />
 
 <Guides />
 

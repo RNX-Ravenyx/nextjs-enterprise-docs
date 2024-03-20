@@ -231,10 +231,10 @@ function NavigationGroup({
 
 export const navigation: Array<NavGroup> = [
   {
-    title: 'Guides',
+    title: 'Getting Started',
     links: [
-      { title: 'Getting Started', href: '/' },
-      { title: 'Quickstart', href: '/quickstart' },
+      { title: 'Introduction', href: '/' },
+      { title: 'Installation', href: '/installation' },
       { title: 'SDKs', href: '/sdks' },
       { title: 'Authentication', href: '/authentication' },
       { title: 'Pagination', href: '/pagination' },

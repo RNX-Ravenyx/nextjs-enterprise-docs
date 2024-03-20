@@ -1,0 +1,107 @@
+export const metadata = {
+  title: 'Installation',
+  description:
+    'This guide will get you all set up and ready to use the Next.js Enterprise. We’ll cover how to get started an API client and how to make your first API request.',
+}
+
+# Installation
+
+System Requirements:
+
+- Node.js 20.10.0
+- macOS, Windows (including WSL), and Linux.
+
+This guide will get you all set up and ready to use the Next.js Enterprise. We'll cover how to get started using one of our API clients and how to make your first API request. We'll also look at where to go next to find all the information you need to take full advantage of our powerful REST API. {{ className: 'lead' }}
+
+<Note>
+  Before you can make requests to the Next.js Enterprise, you will need to grab
+  your API key from your dashboard. You find it under [Settings &raquo; API](#).
+</Note>
+
+## 🎯 Getting Started
+
+Jumpstart your development with the Next.js Enterprise Boilerplate by following these simple steps:
+
+### 1. Fork & clone repository:
+
+Begin by starring and forking the repository on GitLab to your account. Then, clone it locally using:
+
+```bash
+git clone https://github.com/<your_username>/nextjs-enterprise-boilerplate.git
+```
+
+<Note>_Don’t forget to ⭐ star the project for easy access!_</Note>
+
+### 2. Install the dependencies:
+
+Navigate to the project directory and install the dependencies. Use `npm ci` to install versions locked in `package-lock.json`, ensuring consistent builds across environments.
+
+```bash
+cd nextjs-enterprise-boilerplate
+npm ci
+```
+
+<Note>
+  The `npm ci` command provides faster, more reliable installations for CI/CD
+  pipelines by installing directly from `package-lock.json` and skipping certain
+  user-oriented features.
+</Note>
+
+### 3. Start the Development Server
+
+Kick off the development server to see your project in action:
+
+```bash
+npm run dev
+```
+
+<Note>
+  View your application by opening http://localhost:3000 in your browser.
+</Note>
+
+### 4. Enforcing Conventional Commits with Git Hooks:
+
+This project adheres to the Conventional Commits specification to ensure a consistent commit message format, which facilitates semantic versioning and changelog generation. We use Git hooks, managed by the pre-commit tool, to automate the enforcement of this specification.
+
+1.  **Setting Up Pre-commit:**
+
+First, ensure you have the pre-commit tool installed on your system. If you're using Homebrew (on macOS or Linux), you can install pre-commit with the following command:
+
+#### **Windows users:**
+
+Install pre-commit using `pip` (Python's package installer). If you don't have Python installed, download it from python.org first. Then, install pre-commit with pip:
+
+<CodeGroup>
+```bash  {{ language: 'brew' }}
+brew install pre-commit
+```
+
+```bash {{language: 'python'}}
+pip install pre-commit
+```
+
+</CodeGroup>
+
+2.  **Installing Git Hooks:**
+
+After installing pre-commit, navigate to the root directory of your cloned project and run:
+
+```bash
+pre-commit install -t commit-msg
+```
+
+This command installs a Git hook that automatically checks your commit messages against the Conventional Commits specification. If a commit message doesn't meet the specification, the commit will be blocked, and you'll need to adjust the message accordingly.
+
+<Note>
+  It's important for all contributors to run this setup to ensure consistency
+  across commits. This process only needs to be completed once per local
+  repository setup.
+</Note>
+
+## What's next?
+
+Great, you're now set up with an API client and have made your first request to the API. Here are a few links that might be handy as you venture further into the Next.js Enterprise:
+
+- [Grab your API key from the Protocol dashboard](#)
+- [Check out the Conversations endpoint](/conversations)
+- [Learn about the different error messages in Protocol](/errors)

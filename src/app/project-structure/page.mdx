@@ -1,0 +1,44 @@
+import { ProjectStructureTable } from '@/components/ProjectStructureTable'
+
+export const metadata = {
+  title: 'Project Structure',
+  description: 'Some description',
+}
+
+export const sections = [
+  { title: 'Top-level folders', id: 'top-level-folders' },
+  { title: 'Top-level files', id: 'top-level-files' },
+  { title: 'App routing', id: 'app-routing' },
+  { title: 'Nested routes', id: 'nested-routes' },
+  { title: 'Dynamic routes', id: 'dynamic-routes' },
+]
+
+# Next.js Enterprise Project Structure
+
+This page provides an overview of the project structure of the Next.js Enterprise application, outlining the organization of top-level folders and files, app routing mechanisms, and how nested and dynamic routes are structured.
+
+Following the introduction, you will find detailed sections explaining each part of the project structure, categorized for easy navigation.
+
+## Top-level Folders
+
+The project's top-level folders are designed to organize the application's core functionalities, components, and configurations systematically.
+
+<ProjectStructureTable type="folders" />
+
+## Top-level Files
+
+Essential configuration files and scripts that dictate the behavior of the Next.js application, TypeScript setup, styling, and other project-wide settings.
+
+<ProjectStructureTable type="files" />
+
+## App Routing
+
+Next.js leverages a file-based routing system, enhanced in this project to support complex routing needs, including nested and dynamic routes.
+
+## Nested Routes
+
+Exploration of how nested routes are implemented within the Next.js framework to create a structured and intuitive application architecture.
+
+## Dynamic Routes
+
+Understanding the setup for dynamic routes, allowing for flexible navigation patterns based on user-generated content or database entries.

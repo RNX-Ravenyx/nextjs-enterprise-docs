@@ -3,26 +3,24 @@ import { Heading } from '@/components/Heading'
 
 const guides = [
   {
-    href: '/authentication',
-    name: 'Authentication',
-    description: 'Learn how to authenticate your API requests.',
+    href: '/installation',
+    name: 'Installation',
+    description: 'Learn how to setup your project.',
   },
   {
-    href: '/pagination',
-    name: 'Pagination',
-    description: 'Understand how to work with paginated responses.',
+    href: '/project-structure',
+    name: 'Project Structure',
+    description: 'Understand how Next.js Enterprise is structured.',
   },
   {
-    href: '/errors',
-    name: 'Errors',
-    description:
-      'Read about the different types of errors returned by the API.',
+    href: '/project-scripts',
+    name: 'Project Scripts',
+    description: 'Read about the different scripts and their usage.',
   },
   {
     href: '/deploying',
     name: 'Deploying',
-    description:
-      'Learn how to programmatically configure webhooks for your app.',
+    description: 'Learn how to deploy your app.',
   },
 ]
 

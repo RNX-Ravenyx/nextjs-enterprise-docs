@@ -28,10 +28,9 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
-    href: '/contacts',
-    name: 'Contacts',
-    description:
-      'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
+    href: '/support',
+    name: 'Support',
+    description: 'Have an issue? Get help with Next.js Enterprise.',
     icon: UserIcon,
     pattern: {
       y: 16,
@@ -42,10 +41,10 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/conversations',
-    name: 'Conversations',
+    href: '/further-reading',
+    name: 'Further Reading',
     description:
-      'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+      'Explore a curated selection of resources to deepen your understanding of the utilized ecosystem.',
     icon: ChatBubbleIcon,
     pattern: {
       y: -6,
@@ -56,10 +55,10 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/messages',
-    name: 'Messages',
+    href: '/troubleshooting',
+    name: 'Troubleshooting',
     description:
-      'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
+      'Discover solutions and diagnostic steps for resolving common issues encountered with the project.',
     icon: EnvelopeIcon,
     pattern: {
       y: 32,
@@ -70,10 +69,10 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/groups',
-    name: 'Groups',
+    href: '/faq',
+    name: 'FAQ',
     description:
-      'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
+      'Explore frequently asked questions (FAQs) encompassing common inquiries for  Next.js Enterprise.',
     icon: UsersIcon,
     pattern: {
       y: 22,

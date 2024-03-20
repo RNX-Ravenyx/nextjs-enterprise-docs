@@ -50,7 +50,7 @@ const technicalFeatures = [
     href: 'https://www.typescriptlang.org/',
   },
   {
-    name: 'Progressive Web Application (PWA) Configuration',
+    name: 'Progressive Web Application (PWA)',
     description: () => (
       <span>
         Leverages PWA technology to ensure optimal performance, reliability, and

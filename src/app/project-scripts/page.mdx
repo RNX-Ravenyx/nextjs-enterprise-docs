@@ -1,0 +1,33 @@
+export const metadata = {
+  title: 'Attachments',
+  description:
+    'On this page, we’ll dive into the different attachment endpoints you can use to manage attachments programmatically.',
+}
+
+# Project Scripts
+
+Attachments are how you share things in Protocol — they allow you to send all sorts of files to your contacts and groups. On this page, we'll dive into the different attachment endpoints you can use to manage attachments programmatically. We'll look at how to query, upload, update, and delete attachments. {{ className: 'lead' }}
+
+## 📖 Overview
+
+Each script in the `package.json` is designed to streamline the development, testing, and deployment processes. Here’s a quick guide to what each script does:
+
+- `dev`: Starts the Next.js development server with colorized output for enhanced readability. Use this for local development.
+- `build`: Compiles your application for production deployment. It optimizes your app for the best performance. Note that your `dev` server will need to be stopped to run this command.
+- `start`: Runs the compiled app in production mode. Use this after building your app.
+- `clean`: Removes `node_modules`.
+- `lint`: Runs ESLint to identify and report on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+- `lint:fix`: Automatically fixes linting issues found by ESLint. This can save time by correcting many common coding errors.
+- `prettier`: Runs Prettier to check if all files match the code formatting rules. This helps maintain code quality and consistency.
+- `prettier:fix`: Automatically formats your code files according to the specified style guidelines. This ensures consistency across your codebase.
+- `analyze`: Analyzes the webpack bundle sizes for Client, Server and Edge environments and reports the findings. This is crucial for keeping your app's performance optimized.
+- `storybook`: Starts the Storybook server, allowing you to develop and test UI components in isolation.
+- `test-storybook`: Executes smoke tests against our static Storybook site using Playwright, ensuring all UI components render and function correctly across different browsers. This quick validation process is essential for maintaining the quality and reliability of our component library.
+- `build-storybook`: Compiles your Storybook into a static web application that can be deployed to any web server.
+- `test`: Executes Jest to run your unit and integration tests. This is essential for ensuring your codebase remains bug-free.
+- `e2e:headless`: Runs end-to-end tests using Playwright in headless mode, which is useful for automated testing environments.
+- `e2e:ui`: Executes Playwright tests with a graphical user interface, allowing for interactive debugging.
+- `format`: Uses Prettier to automatically format supported files in your project, ensuring code style consistency.
+- `preinstall`: Runs before the package is installed and ensures that npm is used for the installation, leveraging `npm-only-allow` to enforce this.
+- `postinstall`: Executes after the package is installed, applying patches to your node modules via `patch-package`.
+- `coupling-graph`: Generates a visual graph of the coupling and cohesion between components using `madge`. This can help in understanding and improving the project architecture.

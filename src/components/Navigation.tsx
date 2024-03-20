@@ -235,8 +235,10 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'Introduction', href: '/' },
       { title: 'Installation', href: '/installation' },
+      { title: 'Configuration', href: '/configuration' },
       { title: 'Connecting to Firebase', href: '/connecting-to-firebase' },
       { title: 'Project Structure', href: '/project-structure' },
+      { title: 'Project Scripts', href: '/project-scripts' },
     ],
   },
   {
@@ -282,6 +284,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Contacts', href: '/contacts' },
       { title: 'Community and Support', href: '/community-and-support' },
       { title: 'Further Reading', href: '/further-reading' },
+      { title: 'Contributions', href: '/contributions' },
       { title: 'Troubleshooting', href: '/troubleshooting' },
       { title: 'FAQ', href: '/faq' },
     ],

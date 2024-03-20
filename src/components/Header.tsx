@@ -74,6 +74,7 @@ export const Header = forwardRef<
         <MobileNavigation />
         <Link href="/" aria-label="Home">
           <Logo className="h-6" />
+          <p>Next.js Enterprise</p>
         </Link>
       </div>
       <div className="flex items-center gap-5">

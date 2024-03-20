@@ -3,7 +3,7 @@ import { Button } from './Button'
 // Data structure for project structure details
 const projectStructure = [
   {
-    category: 'Top-level Folders',
+    category: 'folders',
     items: [
       {
         name: '.github',
@@ -41,7 +41,7 @@ const projectStructure = [
     ],
   },
   {
-    category: 'Top-level Files',
+    category: 'files',
     items: [
       {
         name: '.all-contributorsrc',
@@ -182,15 +182,90 @@ const projectStructure = [
       },
     ],
   },
+  {
+    category: 'app-folder',
+    items: [
+      {
+        name: '[lng]',
+        description:
+          'Contains API route handlers, enabling server-side processing of requests and data management.',
+      },
+      {
+        name: 'api',
+        description:
+          'Contains API route handlers, enabling server-side processing of requests and data management.',
+      },
+      {
+        name: 'i18n',
+        description:
+          'Contains internationalization configurations and client-side setup for multi-language support.',
+      },
+    ],
+  },
+  {
+    category: 'i18n',
+    items: [
+      {
+        name: 'i18n',
+        description:
+          'Contains internationalization configurations and client-side setup for multi-language support.',
+      },
+      {
+        name: 'i18n/locales',
+        description:
+          'Holds the translation files for supported languages, organized by locale codes.',
+      },
+      {
+        name: 'i18n/locales/de, en, bg',
+        description:
+          'Translation files for German, English, and Bulgarian, providing localized text for the UI.',
+      },
+      {
+        name: 'i18n/client.js',
+        description:
+          'Client-side initialization for the i18n framework, setting up language detection and switching.',
+      },
+      {
+        name: 'i18n/index.js',
+        description:
+          'Main entry point for i18n configurations, aggregating and exporting setup for server and client sides.',
+      },
+      {
+        name: 'i18n/settings.ts',
+        description:
+          'TypeScript file containing settings for i18n, such as default language and formatting options.',
+      },
+    ],
+  },
+  {
+    category: 'api',
+    items: [
+      {
+        name: 'api',
+        description:
+          'Contains API route handlers, enabling server-side processing of requests and data management.',
+      },
+      {
+        name: 'api/health',
+        description:
+          "Health check endpoint for monitoring the application's status and ensuring its operational integrity.",
+      },
+      {
+        name: 'api/health/route.ts',
+        description:
+          'Defines the health check API route, returning server status and uptime information.',
+      },
+    ],
+  },
 ]
 
 export const ProjectStructureTable = ({
   type,
 }: {
-  type: 'files' | 'folders'
+  type: 'files' | 'folders' | 'app-folder' | 'i18n'
 }) => {
-  const items =
-    type === 'folders' ? projectStructure[0].items : projectStructure[1].items
+  const items = projectStructure.find((section) => section.category === type)
+    ?.items
 
   return (
     <div>
@@ -215,7 +290,7 @@ export const ProjectStructureTable = ({
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {items.map((item) => (
+                {items?.map((item) => (
                   <tr key={item.name}>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium  sm:pl-0">
                       <Button

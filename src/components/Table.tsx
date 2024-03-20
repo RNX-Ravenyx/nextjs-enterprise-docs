@@ -222,7 +222,7 @@ const technicalFeatures = [
     href: 'https://www.whitesourcesoftware.com/free-developer-tools/renovate',
   },
   {
-    name: 'Internalization with i18next',
+    name: 'Internationalization with i18next',
     description: () => (
       <span>
         Facilitates building accessible applications with internationalization
@@ -345,7 +345,7 @@ const uiFeatures = [
     href: '#', // Adjust the href to point to your specific documentation or further details about the chatbot functionality if available
   },
   {
-    name: 'Internalization',
+    name: 'Internationalization',
     description: () => (
       <span>
         Comes with out-of-the-box support for English, German, and Bulgarian,

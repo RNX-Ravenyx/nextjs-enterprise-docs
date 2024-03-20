@@ -7,7 +7,7 @@ export function About() {
         About Next.js Enterprise
       </Heading>
       <div className="mt-4 border-t border-zinc-900/5 pt-10  dark:border-white/5">
-        <p>
+        <p className="mt-0">
           Next.js Enterprise is a comprehensive, ready-to-launch web solution
           designed for both individual developers and businesses aiming to
           swiftly deploy and scale their online services. Far surpassing a mere

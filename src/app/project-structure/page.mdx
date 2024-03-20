@@ -9,8 +9,9 @@ export const sections = [
   { title: 'Top-level folders', id: 'top-level-folders' },
   { title: 'Top-level files', id: 'top-level-files' },
   { title: 'App routing', id: 'app-routing' },
-  { title: 'Nested routes', id: 'nested-routes' },
   { title: 'Dynamic routes', id: 'dynamic-routes' },
+  { title: 'API Routes', id: 'api-routes' },
+  { title: 'i18n - Internationalization', id: 'i18n-internationalization' },
 ]
 
 # Next.js Enterprise Project Structure
@@ -33,12 +34,36 @@ Essential configuration files and scripts that dictate the behavior of the Next.
 
 ## App Routing
 
-Next.js leverages a file-based routing system, enhanced in this project to support complex routing needs, including nested and dynamic routes.
+Next.js leverages a file-based routing system, enhanced in this project to support complex routing needs, including nested and dynamic routes. The `app` folder holds the main application logic, including the routing and core components that define the structure of the application's pages and their interactions.
 
-## Nested Routes
-
-Exploration of how nested routes are implemented within the Next.js framework to create a structured and intuitive application architecture.
+<ProjectStructureTable type="app-folder" />
 
 ## Dynamic Routes
 
-Understanding the setup for dynamic routes, allowing for flexible navigation patterns based on user-generated content or database entries.
+Dynamic routes in this project are particularly pivotal for internationalization. By structuring URLs with language codes as their base path (e.g., `/en/about`, `/de/contact`), we provide localized content dynamically. This setup is powered by the `i18n` folder configuration, where:
+
+- **Locales Directory**: The `locales` subdirectory within `i18n` contains JSON files for each supported language (e.g., `en`, `de`, `bg`), defining translations for UI elements across the site.
+
+- **Dynamic Language Support**: The application intelligently loads the appropriate language files based on the URL's language code segment. This mechanism ensures that users are presented with content in their preferred language, enhancing the user experience by making the site accessible and user-friendly to a global audience.
+
+The `[lng]` segment in route definitions (e.g., `pages/[lng]/layout.tsx`) signifies a dynamic part of the URL path that Next.js replaces with actual language codes at runtime. This flexible routing approach allows for the straightforward addition of new languages, simply by adding new translation files to the `locales` directory without the need for additional routing configurations.
+
+## API Routes
+
+The `api` folder contains server-side logic for handling API requests. It includes route handlers, such as the `health` check endpoint, which provides a simple way to monitor the application's operational status.
+
+<ProjectStructureTable type="api" />
+
+By understanding the organization and purpose of these key areas, developers can navigate and contribute to the Next.js Enterprise project more effectively.
+
+## i18n - Internationalization
+
+The `i18n` folder is central to the application's internationalization strategy, enabling the application to support multiple languages dynamically.
+
+- **Locales**: Within the `i18n/locales` directory, each language is represented by its locale code (`de`, `en`, `bg`), and contains translation files that provide localized text for the UI. This structure allows for easy addition of new languages by adding new directories for the locale codes and corresponding translation files.
+
+- **Dynamic Language Support**: The `[lng]` folder names represent a dynamic segment in the path, allowing the application to load different language files based on the user's language preference or browser settings. This setup enables seamless switching between languages without affecting the user's experience or requiring page reloads.
+
+- **Configuration and Client-side Initialization**: The `i18n` folder also includes configuration files (`client.js`, `index.js`, and `settings.ts`) that set up the internationalization framework, including language detection, switching capabilities, and default settings.
+
+<ProjectStructureTable type="i18n" />

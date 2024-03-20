@@ -3,8 +3,7 @@ export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="80px"
-      height="80px"
+      className="h-14 w-14 lg:h-20 lg:w-20"
       viewBox="0 0 1024.000000 1024.000000"
       preserveAspectRatio="xMidYMid meet"
     >

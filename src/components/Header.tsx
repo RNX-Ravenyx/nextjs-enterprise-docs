@@ -72,9 +72,14 @@ export const Header = forwardRef<
       <Search />
       <div className="flex items-center gap-5 lg:hidden">
         <MobileNavigation />
-        <Link href="/" aria-label="Home">
-          <Logo className="h-6" />
-          <p>Next.js Enterprise</p>
+        <Link href="/" aria-label="Home" className="flex items-center">
+          <Logo />
+          <p className="text-lg">
+            <span className="font-bold text-violet-700 dark:text-violet-400">
+              Next.js
+            </span>{' '}
+            Enterprise
+          </p>
         </Link>
       </div>
       <div className="flex items-center gap-5">
@@ -90,7 +95,7 @@ export const Header = forwardRef<
           <MobileSearch />
           <ThemeToggle />
         </div>
-        <div className="hidden min-[416px]:contents">
+        <div className="hidden min-[488px]:contents">
           <Button href="#">Sign in</Button>
         </div>
       </div>

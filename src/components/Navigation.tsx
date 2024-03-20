@@ -235,35 +235,55 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'Introduction', href: '/' },
       { title: 'Installation', href: '/installation' },
+      { title: 'Connecting to Firebase', href: '/connecting-to-firebase' },
       { title: 'Project Structure', href: '/project-structure' },
-      { title: 'Authentication', href: '/authentication' },
-      { title: 'Pagination', href: '/pagination' },
-      { title: 'Errors', href: '/errors' },
     ],
   },
   {
     title: 'Building Your Application',
-    links: [{ title: 'Deploying', href: '/deploying' }],
+    links: [
+      { title: 'Customizing Themes', href: '/customizing-themes' },
+      { title: 'Deploying', href: '/deploying' },
+    ],
   },
   {
     title: 'API Reference',
-    links: [{ title: 'Deploying', href: '/deploying' }],
+    links: [
+      { title: 'Configuration', href: '/configuration' },
+      { title: 'API Endpoints and Usage', href: '/api-endpoints' },
+      { title: 'Testing', href: '/testing' },
+      // Offer guidance on how to extend or customize the application. This might involve adding new pages, extending the UI with additional components, or integrating with other services.
+      {
+        title: 'Extending and Customization',
+        href: '/extending-and-customization',
+      },
+    ],
+  },
+  {
+    title: 'Application Features',
+    links: [
+      { title: 'Configuration', href: '/configuration' },
+      { title: 'Admin Dashboard', href: '/admin-dashboard' },
+    ],
   },
   {
     title: 'Architecture',
     links: [
       { title: 'Accessibility', href: '/accessibility' },
       { title: 'Internationalization', href: '/internationalization' },
+      { title: 'State Management', href: '/state-management' },
+      { title: 'Security Practice', href: '/security-practices' },
+      { title: 'Data Modeling', href: '/data-modeling' },
     ],
   },
   {
     title: 'Resources',
     links: [
       { title: 'Contacts', href: '/contacts' },
-      { title: 'Conversations', href: '/conversations' },
-      { title: 'Messages', href: '/messages' },
-      { title: 'Groups', href: '/groups' },
-      { title: 'Attachments', href: '/attachments' },
+      { title: 'Community and Support', href: '/community-and-support' },
+      { title: 'Further Reading', href: '/further-reading' },
+      { title: 'Troubleshooting', href: '/troubleshooting' },
+      { title: 'FAQ', href: '/faq' },
     ],
   },
 ]

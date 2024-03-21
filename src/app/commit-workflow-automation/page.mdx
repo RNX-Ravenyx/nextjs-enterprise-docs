@@ -39,6 +39,7 @@ Our Commitlint configuration enforces a specific format for commit messages:
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
+    'subject-case': [2, 'always', ['sentence-case']],
     'type-enum': [
       2,
       'always',
@@ -56,22 +57,6 @@ module.exports = {
         'merge',
         'revert',
       ],
-    ],
-  },
-}
-```
-
-This setup allows for a variety of commit types, providing flexibility while maintaining consistency. Additionally, the configuration can be customized, such as enforcing JIRA ticket numbers in commit messages, to further align with project management requirements. Example:
-
-```javascript
-// "<type>[optional scope]: <description>"
-module.exports = {
-  extends: ['@commitlint/config-conventional'],
-  rules: {
-    'type-enum': [
-      2,
-      'always',
-      /^(feat|fix|perf|refactor|docs|chore|style|test)(\(\w+\))?: (OW-\d+) - .+$/,
     ],
   },
 }

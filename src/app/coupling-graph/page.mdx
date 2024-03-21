@@ -1,0 +1,54 @@
+export const metadata = {
+  title: 'Coupling Graph',
+  description:
+    'Discover the architectural relationships within your project through a visual coupling graph, generated using Madge and Graphviz. This guide will help you set up and generate a comprehensive dependency graph for better understanding and optimizing your project structure.',
+}
+
+# Coupling Graph
+
+Understanding the structure and dependencies of your project can be challenging, especially as it grows in size and complexity. To aid in visualizing the relationships and dependencies between various parts of your project, we utilize a powerful tool called Madge, in conjunction with Graphviz, to generate a coupling graph. This visual representation helps developers identify potential areas for refactoring, understand module relationships, and ensure a clean architecture. {{ className: 'lead' }}
+
+## What is Madge?
+
+Madge is a development tool used to generate a visual representation of your project's module dependencies. It analyzes your files and dependencies, creating an easily interpretable graph that shows how modules are interconnected. This insight is invaluable for debugging, optimizing, and understanding your application's structure.
+
+## Why Graphviz?
+
+Graphviz is an open-source graph visualization software. It provides a way to represent structural information as diagrams of abstract graphs and networks. Madge generates the dependency graph data, but to visualize this data as an actual graph, we use Graphviz to render it into an image file.
+
+## Setting Up
+
+To generate your project's coupling graph, you'll need both Madge and Graphviz installed and properly configured.
+
+## Installing Graphviz
+
+Graphviz needs to be installed separately and its binaries added to your system's PATH so that Madge can use it to generate the graph images.
+
+- **Windows:** Download the installer from [Graphviz's download](https://graphviz.org/download/) page. During the installation, ensure to check the option to add Graphviz to your system's PATH.
+
+- **macOS:** Install via Homebrew with `brew install graphviz`.
+
+- **Linux:** Use your distribution's package manager, for example, `sudo apt install graphviz` on Debian/Ubuntu.
+
+Troubleshooting Installation
+If you encounter any issues while generating graphs, ensure that Graphviz is correctly installed and accessible from your PATH. You can test this by running `dot -V` in your terminal. If you see an error or the command is not found, refer to the Graphviz documentation and the troubleshooting guide [here](https://github.com/pahen/madge/issues/257).
+
+## Generating the Coupling Graph
+
+Once Madge and Graphviz are set up, you can generate the coupling graph for your project with the following npm script configured in your `package.json`:
+
+```json
+"coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude \".next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|.storybook/|.eslintrc.js\" --image graph.svg",
+```
+
+Run this script using npm:
+
+```bash
+npm run coupling-graph
+```
+
+This will generate a file named `graph.svg` in your project root, which is a visual representation of your project's module dependencies.
+
+The `--exclude` option is used to omit specific directories and files from the graph, such as configuration files, external libraries, or any files that do not contribute to the understanding of your project's internal structure.
+
+By analyzing the generated graph, you can gain insights into your project's architecture, identify tightly coupled modules, and make informed decisions about refactoring or restructuring your code for better maintainability and scalability.

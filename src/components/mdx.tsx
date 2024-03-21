@@ -42,10 +42,40 @@ function InfoIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function WarningIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      {...props}
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+      />
+    </svg>
+  )
+}
+
 export function Note({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-6 flex gap-2.5 rounded-2xl border border-purple-800/20 bg-purple-50/50 p-4 leading-6 text-purple-950 dark:border-purple-800/30 dark:bg-purple-800/5 dark:text-purple-500 dark:[--tw-prose-links-hover:theme(colors.purple.300)] dark:[--tw-prose-links:theme(colors.white)]">
       <InfoIcon className="mt-1 h-4 w-4 flex-none fill-purple-800 stroke-white dark:fill-purple-500/20 dark:stroke-purple-500" />
+      <div className="[&>:first-child]:mt-0 [&>:last-child]:mb-0">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export function Warning({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="my-6 flex gap-2.5 rounded-2xl border border-orange-600/20 bg-orange-100/50 p-4 leading-6 text-orange-900 dark:border-orange-600/30 dark:bg-orange-600/5 dark:text-orange-400 dark:[--tw-prose-links-hover:theme(colors.orange.300)] dark:[--tw-prose-links:theme(colors.orange.500)]">
+      <WarningIcon className="mt-1 h-6 w-6 flex-none fill-orange-600 stroke-white dark:fill-orange-500/20 dark:stroke-orange-500" />
       <div className="[&>:first-child]:mt-0 [&>:last-child]:mb-0">
         {children}
       </div>

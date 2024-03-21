@@ -58,45 +58,28 @@ npm run dev
 
 This project adheres to the Conventional Commits specification to ensure a consistent commit message format, which facilitates semantic versioning and changelog generation. We use Git hooks, managed by the pre-commit tool, to automate the enforcement of this specification.
 
-1.  **Setting Up Pre-commit:**
+#### ** Automated Setup with Husky**
 
-First, ensure you have the pre-commit tool installed on your system. If you're using Homebrew (on macOS or Linux), you can install pre-commit with the following command:
-
-#### **Windows users:**
-
-Install pre-commit using `pip` (Python's package installer). If you don't have Python installed, download it from python.org first. Then, install pre-commit with pip:
-
-<CodeGroup>
-```bash  {{ language: 'brew' }}
-brew install pre-commit
-```
-
-```bash {{language: 'python'}}
-pip install pre-commit
-```
-
-</CodeGroup>
-
-2.  **Installing Git Hooks:**
-
-After installing pre-commit, navigate to the root directory of your cloned project and run:
+We leverage Husky to manage our Git hooks, automating the enforcement of Conventional Commits without requiring manual setup from contributors. Upon cloning the repository and installing dependencies, Husky automatically sets up the necessary hooks, including those for validating commit messages.
 
 ```bash
-pre-commit install -t commit-msg
+npm install
 ```
 
-This command installs a Git hook that automatically checks your commit messages against the Conventional Commits specification. If a commit message doesn't meet the specification, the commit will be blocked, and you'll need to adjust the message accordingly.
+This command triggers the prepare script, seamlessly setting up Husky and the associated Git hooks in your local repository.
 
 <Note>
-  It's important for all contributors to run this setup to ensure consistency
-  across commits. This process only needs to be completed once per local
-  repository setup.
+  The automated setup through Husky ensures that all contributors adhere to our
+  commit message conventions, promoting consistency across the project's commit
+  history. This one-time setup process is automatically handled for you, making
+  it effortless to start contributing to the project.
 </Note>
 
 ## What's next?
 
 Great, you're now set up with the application. Here are a few links that might be handy as you venture further into the Next.js Enterprise Boilerplate:
 
+- [Familiarize oyurself with the git commit message workflow](/commit-workflow-automation)
 - [Deploy your application](/deploying)
 - [Explore the project scripts](/project-scripts)
 - [Learn about the project structure](/project-structure)

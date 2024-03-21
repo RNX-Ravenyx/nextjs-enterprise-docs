@@ -1,0 +1,127 @@
+export const metadata = {
+  title: 'Commit Workflow Automation',
+  description:
+    'Learn how our project leverages Husky, standard-version, and commitlint to automate and enforce our commit workflow, ensuring consistent commit messages and automated changelog generation.',
+}
+
+# Commit Workflow Automation
+
+In our project, we prioritize maintaining a clean and consistent commit history while automating the versioning and changelog generation process. We achieve this through the integration of Husky, Commitlint, and Standard-Version as part of our development workflow. {{ className: 'lead' }}
+
+## Husky for Git Hooks
+
+**Husky** is utilized as a development dependency to manage Git hooks easily. Git hooks are scripts that run automatically every time a particular event occurs in a Git repository. With Husky, we can hook into various stages of the Git workflow, such as pre-commit or commit-message, to run custom scripts.
+
+To ensure Husky is properly set up, we include the following script in our `package.json`:
+
+```json
+"scripts": {
+  "prepare": "husky install"
+}
+```
+
+When you run `npm install`, the `prepare` script executes `husky install`, which sets up Husky in the project. This command configures the `.husky/` directory with Git hooks that Husky will manage.
+
+## Commitlint for Enforcing Commit Message Standards
+
+**Commitlint** checks if your commit messages meet the conventional commit format. This standardization facilitates understanding the nature of changes at a glance and automates the changelog generation. Our Husky setup includes a `commit-msg` hook that invokes Commitlint to lint commit messages:
+
+```bash
+npx --no-install commitlint --edit $1
+```
+
+This command runs Commitlint against the commit message being submitted, ensuring it adheres to our project's defined standards before the commit can be finalized.
+
+Our Commitlint configuration enforces a specific format for commit messages:
+
+```javascript
+// "<type>[optional scope]: <description>"
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      [
+        'feat',
+        'fix',
+        'perf',
+        'refactor',
+        'style',
+        'test',
+        'build',
+        'docs',
+        'chore',
+        'ops',
+        'merge',
+        'revert',
+      ],
+    ],
+  },
+}
+```
+
+This setup allows for a variety of commit types, providing flexibility while maintaining consistency. Additionally, the configuration can be customized, such as enforcing JIRA ticket numbers in commit messages, to further align with project management requirements. Example:
+
+```javascript
+// "<type>[optional scope]: <description>"
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      /^(feat|fix|perf|refactor|docs|chore|style|test)(\(\w+\))?: (OW-\d+) - .+$/,
+    ],
+  },
+}
+```
+
+## Standard-Version for Version Management
+
+**Standard-Version** automates versioning and changelog generation based on commit messages. It interprets the commit messages to determine the type of version bump required (major, minor, or patch) and generates or updates the `CHANGELOG.md` accordingly.
+
+Our project incorporates several npm scripts to leverage Standard-Version:
+
+- **Release:** Creates a new release, automatically determining the version bump and updating the changelog.
+
+```json
+"release": "standard-version"
+```
+
+- **Release Automated:** Runs the release script and then pushes the new tag and changes to the repository.
+
+```json
+"release-automated": "npm run release && git push --follow-tags"
+```
+
+- **Release Stable:** Specifically for releasing a stable version (e.g., 1.0.0). This is used when transitioning from a pre-release version to a stable release.
+
+```json
+"release-stable": "npm run release -- --release-as 1.0.0"
+```
+
+<Note>
+  Before the stable release, version bumps are handled semantically based on
+  commit messages, allowing for pre-releases and patches. After declaring a
+  stable release, the versioning follows a more traditional semantic versioning
+  process, where major, minor, and patch releases are explicitly determined by
+  the type of changes introduced.
+</Note>
+
+## Temporarily Bypassing the Commit Message Check
+
+While following the Conventional Commits format is crucial for our project's workflow, there may be instances where you need to bypass this check temporarily (e.g., for minor or emergency fixes). To commit without triggering the commit message validation, you can use the --no-verify option with git commit:
+
+```
+git commit -m "Your commit message" --no-verify
+```
+
+This option tells Git to skip the pre-commit hooks, including the commit message validation. Use this feature judiciously to ensure the integrity and consistency of the project's commit history are maintained.
+
+<Warning>
+  Bypassing the commit message check should be done sparingly and only in
+  situations where it is justified. Regularly committing without following the
+  Conventional Commits format may hinder the automated versioning and changelog
+  generation processes.
+</Warning>

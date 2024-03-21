@@ -251,6 +251,10 @@ export const navigation: Array<NavGroup> = [
   {
     title: 'API Reference',
     links: [
+      {
+        title: 'Commit Workflow Automation',
+        href: '/commit-workflow-automation',
+      },
       { title: 'Configuration', href: '/configuration' },
       { title: 'API Endpoints and Usage', href: '/api-endpoints' },
       { title: 'Testing', href: '/testing' },

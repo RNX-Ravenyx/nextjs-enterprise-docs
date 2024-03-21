@@ -167,6 +167,30 @@ const technicalFeatures = [
     href: 'https://www.conventionalcommits.org/',
   },
   {
+    name: 'Husky',
+    description: () => (
+      <span>
+        Utilizes Husky to manage Git hooks effortlessly, enabling the
+        enforcement of Conventional Commits before commits are finalized. Husky
+        makes it easier to integrate tools like Commitlint, ensuring that our
+        commit messages meet the project&apos;s standards.
+      </span>
+    ),
+    href: 'https://typicode.github.io/husky/',
+  },
+  {
+    name: 'Standard-Version',
+    description: () => (
+      <span>
+        Automates versioning and changelog generation, leveraging the structure
+        of Conventional Commits to determine version increments.
+        Standard-Version simplifies releases, ensuring our version history is
+        meaningful and easily navigable.
+      </span>
+    ),
+    href: 'https://github.com/conventional-changelog/standard-version',
+  },
+  {
     name: 'Open Telemetry Observability',
     description: () => (
       <span>

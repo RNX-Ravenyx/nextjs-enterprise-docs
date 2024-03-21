@@ -63,9 +63,9 @@ const projectStructure = [
           'Specifies intentionally untracked files to ignore in Git operations.',
       },
       {
-        name: '.pre-commit-config.yaml',
+        name: 'commitlint.config.js',
         description:
-          'Configuration for pre-commit hooks to enforce code quality checks before committing.',
+          'Configuration for husky hooks to enforce code quality checks before committing.',
       },
       {
         name: '.prettierignore',
@@ -84,11 +84,6 @@ const projectStructure = [
       {
         name: 'env.mjs',
         description: 'Module script for managing environment variables.',
-      },
-      {
-        name: 'git-conventional-commits.yaml',
-        description:
-          'Configuration for enforcing conventional commit messages.',
       },
       {
         name: 'graph.svg',
